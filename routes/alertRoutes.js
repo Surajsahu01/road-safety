@@ -1,5 +1,5 @@
 const express = require('express');
-const { requireDevice, requireAdmin } = require('../middleware/auth');
+const { requireDevice} = require('../middleware/auth');
 const {
   createAlert,
   listAlerts,
@@ -14,8 +14,8 @@ const router = express.Router();
 router.post('/', requireDevice, createAlert);
 router.get('/', listAlerts);
 router.get('/stats', getStats);
-router.post('/ack-all', requireAdmin, acknowledgeAll);
-router.post('/:id/ack', requireAdmin, acknowledgeAlert);
+router.post('/ack-all', acknowledgeAll);
+router.post('/:id/ack', acknowledgeAlert);
 router.delete('/:id', deleteAlert);
 
 module.exports = router;
