@@ -1,0 +1,6 @@
+node_modules/
+.env
+alerts.sqlite
+alerts.sqlite-shm
+alerts.sqlite-wal
+npm-debug.log*
